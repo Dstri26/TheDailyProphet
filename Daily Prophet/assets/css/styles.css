@@ -1,6 +1,131 @@
+#preload{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index: 999999;
+  background:#dad3c1 url("https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif") center no-repeat;
+}
+
 .post {
   border: 5px solid rgba(256,256,256,0.1);
 }
 .post-container{
-  border: 5px solid rgba(0,0,0,0.5);
+  border: 5px solid rgba(0,0,0,0.8);
+}
+@keyframes lr{
+    0% {left:10px;}
+    100% {left:150px;}     
+}
+@keyframes rl{
+    0% {right:-695px;}
+    100% {right:-400px;} 
+}
+.anime1{
+    animation: vanishing 5s 2;
+ }
+.anime2{
+   animation: lr 5s infinite;
+   position:relative;
+   animation-fill-mode: forwards;
+ }
+.anime3{
+    animation: rl 5s infinite;
+    position:relative;
+    animation-fill-mode: forwards;
+}
+span.one{
+	color:red;
+}
+.jump span{
+	position: relative;
+	display: inline-block;
+	animation:jump 5s infinite;
+}
+@keyframes jump{
+	0%,50%,100% {transform:translateY(-23px);}
+	25%,75% {transform: translateY(0px);}
+}
+
+.jump span:nth-child(5),.jump span:nth-child(10),.jump span:nth-child(16),.jump span:nth-child(19),.jump span:nth-child(20){
+	animation-delay:0s ;
+}
+.jump span:nth-child(4),.jump span:nth-child(6),.jump span:nth-child(11),.jump span:nth-child(15),.jump span:nth-child(18),.jump span:nth-child(21){
+	animation-delay: 0.2s;
+}
+.jump span:nth-child(3),.jump span:nth-child(7),.jump span:nth-child(12),.jump span:nth-child(14),.jump span:nth-child(17),.jump span:nth-child(22){
+	animation-delay: 0.4s ;
+}
+.jump span:nth-child(2),.jump span:nth-child(8),.jump span:nth-child(13),{
+	animation-delay:0.6s ;
+}
+.jump span:nth-child(1),.jump span:nth-child(9){
+	animation-delay: 0.8s ;
+}
+.dl{
+	position: absolute;
+	object-fit: cover;
+	z-index:2;
+	pointer-events: none;
+	mix-blend-mode: screen;
+}
+.dimin{
+	animation:fading 7s infinite;
+}
+@keyframes fading{
+   0%,25%{color:#dad3c1;}
+   50%,75%,100%{color:black;}
+}
+
+.scatter span{
+	display: inline-block;
+	transition: all 7s ease;
+
+}
+.scatter.hidden{
+	opacity: 1;
+}
+.scatter.hidden span:nth-child(1){transform: translate(20px,0px);}  /*s*/
+.scatter.hidden span:nth-child(2){transform: translate(300px,10px);}  /*p*/
+.scatter.hidden span:nth-child(3){transform: translate(100px,50px);}  /*e*/
+.scatter.hidden span:nth-child(4){transform: translate(30px,30px);}   /*l*/
+.scatter.hidden span:nth-child(5){transform: translate(170px,45px);}  /*l*/
+.scatter.hidden span:nth-child(6){transform: translate(120px,10px);}  /*o*/
+.scatter.hidden span:nth-child(7){transform: translate(232px,0px);}   /*f*/
+.scatter.hidden span:nth-child(8){transform: translate(25px,60px);}   /*t*/
+.scatter.hidden span:nth-child(9){transform: translate(330px,9px);}  /*h*/
+.scatter.hidden span:nth-child(10){transform: translate(270px,50px);}  /*e*/
+.scatter.hidden span:nth-child(11){transform: translate(155px,50px);}  /*d*/
+.scatter.hidden span:nth-child(12){transform: translate(149px,20px);}  /*a*/
+.scatter.hidden span:nth-child(13){transform: translate(45px,20px);}   /*y*/
+
+.glow span,.glow1 span{
+    animation:glow 4s infinite;
+}
+@keyframes glow{
+	0%,100%{ color:#fff; filter: blur(2px); text-shadow: 0 0 10px #000,0 0 20px #000,0 0 40px #000;}
+	5%,95%{ color:#111; filter: blur(0px); text-shadow: none;}
+
+}
+.glow span:nth-child(1){animation-delay:0s;}
+.glow span:nth-child(2){animation-delay:0.1s;}
+.glow span:nth-child(3){animation-delay:0.2s;}
+.glow span:nth-child(4){animation-delay:0.3s;}
+.glow span:nth-child(5){animation-delay:0.4s;}
+.glow span:nth-child(6){animation-delay:0.5s;}
+.glow span:nth-child(7){animation-delay:0.6s;}
+.glow span:nth-child(8){animation-delay:0.7s;}
+.glow1 span:nth-child(1){animation-delay:0.8s;}
+.glow1 span:nth-child(2){animation-delay:0.9s;}
+.glow1 span:nth-child(3){animation-delay:1.0s;}
+.glow1 span:nth-child(4){animation-delay:1.1s;}
+.glow1 span:nth-child(5){animation-delay:1.2s;}
+.glow1 span:nth-child(6){animation-delay:1.3s;}
+.glow1 span:nth-child(7){animation-delay:1.4s;}
+.glow1 span:nth-child(8){animation-delay:1.5s;}
+
+.deathly{
+	background-image: url("https://www.freepngimg.com/thumb/harry_potter/67567-and-deathly-hallows-dumbledore-potter-granger-hermione.png");
+	background-size: 35%;
+	background-position: absolute;
+    -webkit-background-clip:text;
 }
